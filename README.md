@@ -19,4 +19,6 @@ names(raw_matrix_intensities)
 # check intensity sums and distributions - are there outliers to be treated with care/removed?
 # par(mar = c(7,7,7,7))
 barplot(colSums(raw_matrix_intensities[, 3:ncol(raw_matrix_intensities)]), main = "Raw intensity sums per run", las = 2)
-
+# Check intensity distributions.
+# That's best done on a clean matrix, with analyte annotation in the row.names
+int_log10 = as.matrix(log10(raw_matrix_intensities[, 3:ncol(raw_matrix_intensities)]))
